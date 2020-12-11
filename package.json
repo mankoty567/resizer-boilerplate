@@ -10,16 +10,20 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "bcrypt": "5.x",
     "grunt": "1.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sails": "^1.4.0",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "eslint": "5.16.0",
+    "nodemon": "^2.0.6"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
+    "dev": "nodemon --watch . sails lift",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
