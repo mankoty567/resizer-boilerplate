@@ -21,11 +21,7 @@ module.exports.session = {
   secret: '80936866c73b9f0e3560f9fa1908f5cb',
 
   url:process.env.REDIS_URL,
-
-  login: function(req, res) {
-    req.session.userId = foundUser.id;
-    return res.json(foundUser);
-  },
+  adapter:  "@sailshq/connect-redis",
 
   /***************************************************************************
   *                                                                          *
