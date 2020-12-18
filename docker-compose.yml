@@ -5,6 +5,7 @@ services:
     environment: 
       - NODE_ENV=development
       - MYSQL_ADDR=mysql://root:example@db:3306/sails
+      - REDIS_URL=redis://redis:6379
     ports:
       - 1337:1337
     command: npm run dev
@@ -19,3 +20,5 @@ services:
       - MYSQL_PASSWORD=sailsPassword
     volumes:
     - ./_docker/mysql:/var/lib/mysql
+  redis:
+    image: redis
