@@ -10,6 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "bcrypt": "5.x",
     "grunt": "1.0.4",
+    "knex": "^0.21.15",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sails": "^1.4.0",
@@ -25,6 +26,7 @@
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "dev": "nodemon --watch . sails lift",
+    "migrate": "knex migrate:latest",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
